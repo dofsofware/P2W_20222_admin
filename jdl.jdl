@@ -1,0 +1,86 @@
+entity Authentification {
+}
+
+entity Choix {
+}
+
+entity InfosAbonne {
+}
+
+entity Incription {
+}
+
+entity MotDePasseSetting {
+}
+
+entity Play {
+}
+
+entity Principes {
+}
+
+
+entity Profil {
+}
+
+entity Reponse {
+}
+
+entity Restaure {
+}
+
+entity Resultat {
+}
+
+entity SaisieCode {
+}
+entity Abonne {
+	identifiant String required unique minlength(4) maxlength(20),
+    telephone String required unique minlength(12) maxlength(12),
+    motDePasse  String required unique minlength(4) maxlength(70),
+    score Double required,
+    niveau Niveau required,
+    createdAt ZonedDateTime required,
+    dernierePaticipation ZonedDateTime,
+    actif Boolean required,
+    codeRactivation String
+}
+
+enum Niveau {
+    DEBUTANT, INTERMEDIAIRE, EXPERT, MAESTRO
+}
+
+entity Gains {
+	telephone String required minlength(12) maxlength(12),
+    minute Double required,
+    megabit Double required,
+    createdAt ZonedDateTime required
+}
+
+entity Question {
+	quiz TextBlob required,
+    reponse1 String required maxlength(50),
+    reponse2 String required maxlength(50),
+    reponse3 String required maxlength(50),    
+    reponse4 String required maxlength(50),
+    bonneReponse String required maxlength(50)
+}
+
+entity Recette {
+    telephone String required minlength(12) maxlength(12),
+    createdAt ZonedDateTime required,
+    montant Double required, 
+    choixDuGain ChoixDuGain required
+}
+
+enum ChoixDuGain {
+    MINUTES, INTERNET
+}
+
+relationship ManyToMany {
+	Abonne{gains} to Gains{abonne}
+}
+
+paginate all with infinite-scroll
+// Set service options to all except few
+service all with serviceImpl
