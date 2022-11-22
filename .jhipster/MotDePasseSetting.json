@@ -1,0 +1,15 @@
+{
+  "applications": "*",
+  "changelogDate": "20221119235548",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "mot_de_passe_setting",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "MotDePasseSetting",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

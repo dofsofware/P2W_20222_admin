@@ -1,0 +1,98 @@
+<br />
+<div style="color: #2b2b2b">
+  <h2 id="page-heading" data-cy="AbonneHeading">
+    <span>Liste Abonnés</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-primary me-2" (click)="reset()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="play2WinAdminApp.abonne.home.refreshListLabel">Refresh List</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="abonnes?.length === 0">
+    <span jhiTranslate="play2WinAdminApp.abonne.home.notFound">No abonnes found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="abonnes && abonnes.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="reset()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="identifiant">
+            <span jhiTranslate="play2WinAdminApp.abonne.identifiant">Identifiant</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="telephone">
+            <span jhiTranslate="play2WinAdminApp.abonne.telephone">Telephone</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="motDePasse">
+            <span jhiTranslate="play2WinAdminApp.abonne.motDePasse">Mot De Passe</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="score">
+            <span jhiTranslate="play2WinAdminApp.abonne.score">Score</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="niveau">
+            <span jhiTranslate="play2WinAdminApp.abonne.niveau">Niveau</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="createdAt">
+            <span jhiTranslate="play2WinAdminApp.abonne.createdAt">Created At</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="dernierePaticipation">
+            <span jhiTranslate="play2WinAdminApp.abonne.dernierePaticipation">Derniere Paticipation</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="actif">
+            <span jhiTranslate="play2WinAdminApp.abonne.actif">Actif</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="codeRactivation">
+            <span jhiTranslate="play2WinAdminApp.abonne.codeRactivation">Code Ractivation</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+        <tr *ngFor="let abonne of abonnes; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/abonne', abonne.id, 'view']">{{ abonne.id }}</a>
+          </td>
+          <td>{{ abonne.identifiant }}</td>
+          <td>{{ abonne.telephone }}</td>
+          <td>{{ abonne.motDePasse }}</td>
+          <td>{{ abonne.score }}</td>
+          <td jhiTranslate="{{ 'play2WinAdminApp.Niveau.' + abonne.niveau }}">{{ abonne.niveau }}</td>
+          <td>{{ abonne.createdAt | formatMediumDatetime }}</td>
+          <td>{{ abonne.dernierePaticipation | formatMediumDatetime }}</td>
+          <td>{{ abonne.actif }}</td>
+          <td>{{ abonne.codeRactivation }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/abonne', abonne.id, 'view']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <!-- <button type="submit" [routerLink]="['/abonne', abonne.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(abonne)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button> -->
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

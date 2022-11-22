@@ -6,13 +6,13 @@
 Bootstrap tweaks
 ===============================================================*/
 
-body,
-h1,
-h2,
-h3,
-h4 {
-  font-weight: 300;
-}
+// body,
+// h1,
+// h2,
+// h3,
+// h4 {
+//   font-weight: 300;
+// }
 
 /* Increase contrast of links to get 100% on Lighthouse Accessability Audit. Override this color if you want to change the link color, or use a Bootswatch theme */
 a {
@@ -29,7 +29,7 @@ a:not([href]):not([tabindex]):hover.dropdown-item {
   color: $dropdown-link-hover-color;
 }
 
-/* override .dropdown-item.active background-color on hover */
+// /* override .dropdown-item.active background-color on hover */
 .dropdown-item.active:hover {
   background-color: mix($dropdown-link-hover-bg, $dropdown-link-active-bg, 50%);
 }
@@ -43,9 +43,9 @@ a:hover {
   color: $dropdown-link-hover-color;
 }
 
-/* ==========================================================================
-Browser Upgrade Prompt
-========================================================================== */
+// /* ==========================================================================
+// Browser Upgrade Prompt
+// ========================================================================== */
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -67,7 +67,7 @@ Generic styles
   border-left: 5px solid red;
 }
 
-/* other generic styles */
+// /* other generic styles */
 
 .jh-card {
   padding: 1.5%;
@@ -95,10 +95,6 @@ Generic styles
 .break {
   white-space: normal;
   word-break: break-all;
-}
-
-.form-control {
-  background-color: #fff;
 }
 
 .readonly {
@@ -160,27 +156,20 @@ Custom alerts for notification
 /* ==========================================================================
 entity detail page css
 ========================================================================== */
-.row-md.jh-entity-details {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 10px;
-  line-height: 1.5;
+.row.jh-entity-details > {
+  dd {
+    margin-bottom: 15px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .row-md.jh-entity-details > {
+  .row.jh-entity-details > {
     dt {
-      float: left;
-      overflow: hidden;
-      clear: left;
-      text-align: right;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      padding: 0.5em 0;
+      margin-bottom: 15px;
     }
     dd {
       border-bottom: 1px solid #eee;
-      padding: 0.5em 0;
+      padding-left: 180px;
       margin-left: 0;
     }
   }
@@ -203,29 +192,11 @@ ui bootstrap tweaks
   white-space: nowrap;
 }
 
-.dropdown-menu {
-  padding-left: 0px;
-}
-
-/* ==========================================================================
-angular-cli removes postcss-rtl processed inline css, processed rules must be added here instead
-========================================================================== */
-/* page-ribbon.component.scss */
-.ribbon {
-  left: -3.5em;
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-/* navbar.component.scss */
-.navbar {
-  ul.navbar-nav {
-    .nav-item {
-      margin-left: 0.5em;
-    }
-  }
-}
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+
+@import '../assets/css/Features-Boxed.css';
+@import '../assets/css/Footer-Dark.css';
+@import '../assets/css/Navigation-with-Button.css';
+// @import '../assets/css/Navigation-with-Search.css';
+@import '../assets/css/styles.compiled.css';
+@import '../assets/css/style.css';

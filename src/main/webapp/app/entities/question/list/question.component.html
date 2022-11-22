@@ -1,0 +1,100 @@
+<div>
+  <h2 id="page-heading" data-cy="QuestionHeading">
+    <span jhiTranslate="play2WinAdminApp.question.home.title">Questions</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="reset()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="play2WinAdminApp.question.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-question"
+        [routerLink]="['/question/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="play2WinAdminApp.question.home.createLabel"> Create a new Question </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="questions?.length === 0">
+    <span jhiTranslate="play2WinAdminApp.question.home.notFound">No questions found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="questions && questions.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="reset()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="quiz">
+            <span jhiTranslate="play2WinAdminApp.question.quiz">Quiz</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="reponse1">
+            <span jhiTranslate="play2WinAdminApp.question.reponse1">Reponse 1</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="reponse2">
+            <span jhiTranslate="play2WinAdminApp.question.reponse2">Reponse 2</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="reponse3">
+            <span jhiTranslate="play2WinAdminApp.question.reponse3">Reponse 3</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="reponse4">
+            <span jhiTranslate="play2WinAdminApp.question.reponse4">Reponse 4</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="bonneReponse">
+            <span jhiTranslate="play2WinAdminApp.question.bonneReponse">Bonne Reponse</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+        <tr *ngFor="let question of questions; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/question', question.id, 'view']">{{ question.id }}</a>
+          </td>
+          <td>{{ question.quiz }}</td>
+          <td>{{ question.reponse1 }}</td>
+          <td>{{ question.reponse2 }}</td>
+          <td>{{ question.reponse3 }}</td>
+          <td>{{ question.reponse4 }}</td>
+          <td>{{ question.bonneReponse }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/question', question.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/question', question.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(question)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

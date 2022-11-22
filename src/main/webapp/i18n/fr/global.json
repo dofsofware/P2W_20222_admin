@@ -7,6 +7,22 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
+        "authentification": "Authentification",
+        "choix": "Choix",
+        "infosAbonne": "Infos Abonne",
+        "incription": "Incription",
+        "motDePasseSetting": "Mot De Passe Setting",
+        "play": "Play",
+        "principes": "Principes",
+        "profil": "Profil",
+        "reponse": "Reponse",
+        "restaure": "Restaure",
+        "resultat": "Resultat",
+        "saisieCode": "Saisie Code",
+        "abonne": "Abonne",
+        "gains": "Gains",
+        "question": "Question",
+        "recette": "Recette",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

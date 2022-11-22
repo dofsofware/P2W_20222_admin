@@ -1,0 +1,15 @@
+{
+  "applications": "*",
+  "changelogDate": "20221119235553",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "restaure",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Restaure",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

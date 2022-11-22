@@ -1,0 +1,9 @@
+export enum Niveau {
+  DEBUTANT = 'DEBUTANT',
+
+  INTERMEDIAIRE = 'INTERMEDIAIRE',
+
+  EXPERT = 'EXPERT',
+
+  MAESTRO = 'MAESTRO',
+}

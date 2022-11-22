@@ -1,0 +1,23 @@
+{
+  "play2WinAdminApp": {
+    "saisieCode": {
+      "home": {
+        "title": "SaisieCodes",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Saisie Code",
+        "createOrEditLabel": "Créer ou éditer un Saisie Code",
+        "notFound": "Aucun Saisie Code trouvé"
+      },
+      "created": "Un nouveau Saisie Code a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Saisie Code avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Saisie Code avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Saisie Code {{ id }} ?"
+      },
+      "detail": {
+        "title": "Saisie Code"
+      },
+      "id": "ID"
+    }
+  }
+}

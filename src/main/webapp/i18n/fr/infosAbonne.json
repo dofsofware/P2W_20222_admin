@@ -1,0 +1,23 @@
+{
+  "play2WinAdminApp": {
+    "infosAbonne": {
+      "home": {
+        "title": "InfosAbonnes",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Infos Abonne",
+        "createOrEditLabel": "Créer ou éditer un Infos Abonne",
+        "notFound": "Aucun Infos Abonne trouvé"
+      },
+      "created": "Un nouveau Infos Abonne a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Infos Abonne avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Infos Abonne avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Infos Abonne {{ id }} ?"
+      },
+      "detail": {
+        "title": "Infos Abonne"
+      },
+      "id": "ID"
+    }
+  }
+}

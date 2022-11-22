@@ -1,0 +1,15 @@
+{
+  "applications": "*",
+  "changelogDate": "20221119235555",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "saisie_code",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SaisieCode",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,15 @@
+{
+  "applications": "*",
+  "changelogDate": "20221119235551",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "profil",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Profil",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

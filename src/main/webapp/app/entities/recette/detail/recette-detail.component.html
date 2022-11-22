@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="recette">
+      <h2 data-cy="recetteDetailsHeading"><span jhiTranslate="play2WinAdminApp.recette.detail.title">Recette</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ recette.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinAdminApp.recette.telephone">Telephone</span></dt>
+        <dd>
+          <span>{{ recette.telephone }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinAdminApp.recette.createdAt">Created At</span></dt>
+        <dd>
+          <span>{{ recette.createdAt | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinAdminApp.recette.montant">Montant</span></dt>
+        <dd>
+          <span>{{ recette.montant }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinAdminApp.recette.choixDuGain">Choix Du Gain</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'play2WinAdminApp.ChoixDuGain.' + recette.choixDuGain }}">{{ recette.choixDuGain }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/recette', recette.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

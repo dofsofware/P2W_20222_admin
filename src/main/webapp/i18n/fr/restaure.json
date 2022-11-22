@@ -1,0 +1,23 @@
+{
+  "play2WinAdminApp": {
+    "restaure": {
+      "home": {
+        "title": "Restaures",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Restaure",
+        "createOrEditLabel": "Créer ou éditer un Restaure",
+        "notFound": "Aucun Restaure trouvé"
+      },
+      "created": "Un nouveau Restaure a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Restaure avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Restaure avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Restaure {{ id }} ?"
+      },
+      "detail": {
+        "title": "Restaure"
+      },
+      "id": "ID"
+    }
+  }
+}

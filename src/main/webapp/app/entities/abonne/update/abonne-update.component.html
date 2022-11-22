@@ -1,0 +1,248 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-abonne-heading" data-cy="AbonneCreateUpdateHeading" jhiTranslate="play2WinAdminApp.abonne.home.createOrEditLabel">
+        Create or edit a Abonne
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="play2WinAdminApp.abonne.identifiant" for="field_identifiant">Identifiant</label>
+          <input
+            type="text"
+            class="form-control"
+            name="identifiant"
+            id="field_identifiant"
+            data-cy="identifiant"
+            formControlName="identifiant"
+          />
+          <div *ngIf="editForm.get('identifiant')!.invalid && (editForm.get('identifiant')!.dirty || editForm.get('identifiant')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('identifiant')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('identifiant')?.errors?.minlength"
+              jhiTranslate="entity.validation.minlength"
+              [translateValues]="{ min: 4 }"
+            >
+              This field is required to be at least 4 characters.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('identifiant')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 20 }"
+            >
+              This field cannot be longer than 20 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="play2WinAdminApp.abonne.telephone" for="field_telephone">Telephone</label>
+          <input type="text" class="form-control" name="telephone" id="field_telephone" data-cy="telephone" formControlName="telephone" />
+          <div *ngIf="editForm.get('telephone')!.invalid && (editForm.get('telephone')!.dirty || editForm.get('telephone')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('telephone')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('telephone')?.errors?.minlength"
+              jhiTranslate="entity.validation.minlength"
+              [translateValues]="{ min: 12 }"
+            >
+              This field is required to be at least 12 characters.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('telephone')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 12 }"
+            >
+              This field cannot be longer than 12 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="play2WinAdminApp.abonne.motDePasse" for="field_motDePasse">Mot De Passe</label>
+          <input
+            type="text"
+            class="form-control"
+            name="motDePasse"
+            id="field_motDePasse"
+            data-cy="motDePasse"
+            formControlName="motDePasse"
+          />
+          <div *ngIf="editForm.get('motDePasse')!.invalid && (editForm.get('motDePasse')!.dirty || editForm.get('motDePasse')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('motDePasse')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('motDePasse')?.errors?.minlength"
+              jhiTranslate="entity.validation.minlength"
+              [translateValues]="{ min: 4 }"
+            >
+              This field is required to be at least 4 characters.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('motDePasse')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 70 }"
+            >
+              This field cannot be longer than 70 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="play2WinAdminApp.abonne.score" for="field_score">Score</label>
+          <input type="number" class="form-control" name="score" id="field_score" data-cy="score" formControlName="score" />
+          <div *ngIf="editForm.get('score')!.invalid && (editForm.get('score')!.dirty || editForm.get('score')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('score')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small class="form-text text-danger" [hidden]="!editForm.get('score')?.errors?.number" jhiTranslate="entity.validation.number">
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="play2WinAdminApp.abonne.niveau" for="field_niveau">Niveau</label>
+          <select class="form-control" name="niveau" formControlName="niveau" id="field_niveau" data-cy="niveau">
+            <option [ngValue]="null">{{ 'play2WinAdminApp.Niveau.null' | translate }}</option>
+            <option *ngFor="let niveau of niveauValues" [value]="niveau">{{ 'play2WinAdminApp.Niveau.' + niveau | translate }}</option>
+          </select>
+          <div *ngIf="editForm.get('niveau')!.invalid && (editForm.get('niveau')!.dirty || editForm.get('niveau')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('niveau')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="play2WinAdminApp.abonne.createdAt" for="field_createdAt">Created At</label>
+          <div class="d-flex">
+            <input
+              id="field_createdAt"
+              data-cy="createdAt"
+              type="datetime-local"
+              class="form-control"
+              name="createdAt"
+              formControlName="createdAt"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          <div *ngIf="editForm.get('createdAt')!.invalid && (editForm.get('createdAt')!.dirty || editForm.get('createdAt')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('createdAt')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('createdAt')?.errors?.ZonedDateTimelocal"
+              jhiTranslate="entity.validation.ZonedDateTimelocal"
+            >
+              This field should be a date and time.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="play2WinAdminApp.abonne.dernierePaticipation" for="field_dernierePaticipation"
+            >Derniere Paticipation</label
+          >
+          <div class="d-flex">
+            <input
+              id="field_dernierePaticipation"
+              data-cy="dernierePaticipation"
+              type="datetime-local"
+              class="form-control"
+              name="dernierePaticipation"
+              formControlName="dernierePaticipation"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="play2WinAdminApp.abonne.actif" for="field_actif">Actif</label>
+          <input type="checkbox" class="form-check" name="actif" id="field_actif" data-cy="actif" formControlName="actif" />
+          <div *ngIf="editForm.get('actif')!.invalid && (editForm.get('actif')!.dirty || editForm.get('actif')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('actif')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="play2WinAdminApp.abonne.codeRactivation" for="field_codeRactivation"
+            >Code Ractivation</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="codeRactivation"
+            id="field_codeRactivation"
+            data-cy="codeRactivation"
+            formControlName="codeRactivation"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label jhiTranslate="play2WinAdminApp.abonne.gains" for="field_gains">Gains</label>
+          <select class="form-control" id="field_gains" data-cy="gains" multiple name="gains" formControlName="gains">
+            <option
+              [ngValue]="getSelectedGains(gainsOption, editForm.get('gains')!.value)"
+              *ngFor="let gainsOption of gainsSharedCollection; trackBy: trackGainsById"
+            >
+              {{ gainsOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

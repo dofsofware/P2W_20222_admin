@@ -1,0 +1,23 @@
+{
+  "play2WinAdminApp": {
+    "incription": {
+      "home": {
+        "title": "Incriptions",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Incription",
+        "createOrEditLabel": "Créer ou éditer un Incription",
+        "notFound": "Aucun Incription trouvé"
+      },
+      "created": "Un nouveau Incription a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Incription avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Incription avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Incription {{ id }} ?"
+      },
+      "detail": {
+        "title": "Incription"
+      },
+      "id": "ID"
+    }
+  }
+}

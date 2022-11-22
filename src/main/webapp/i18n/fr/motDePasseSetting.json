@@ -1,0 +1,23 @@
+{
+  "play2WinAdminApp": {
+    "motDePasseSetting": {
+      "home": {
+        "title": "MotDePasseSettings",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Mot De Passe Setting",
+        "createOrEditLabel": "Créer ou éditer un Mot De Passe Setting",
+        "notFound": "Aucun Mot De Passe Setting trouvé"
+      },
+      "created": "Un nouveau Mot De Passe Setting a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Mot De Passe Setting avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Mot De Passe Setting avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Mot De Passe Setting {{ id }} ?"
+      },
+      "detail": {
+        "title": "Mot De Passe Setting"
+      },
+      "id": "ID"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "applications": "*",
+  "changelogDate": "20221119235552",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "reponse",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Reponse",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="gains">
+      <h2 data-cy="gainsDetailsHeading"><span jhiTranslate="play2WinAdminApp.gains.detail.title">Gains</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ gains.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinAdminApp.gains.telephone">Telephone</span></dt>
+        <dd>
+          <span>{{ gains.telephone }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinAdminApp.gains.minute">Minute</span></dt>
+        <dd>
+          <span>{{ gains.minute }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinAdminApp.gains.megabit">Megabit</span></dt>
+        <dd>
+          <span>{{ gains.megabit }}</span>
+        </dd>
+        <dt><span jhiTranslate="play2WinAdminApp.gains.createdAt">Created At</span></dt>
+        <dd>
+          <span>{{ gains.createdAt | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/gains', gains.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

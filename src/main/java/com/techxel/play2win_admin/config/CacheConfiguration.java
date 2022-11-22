@@ -48,6 +48,24 @@ public class CacheConfiguration {
             createCache(cm, com.techxel.play2win_admin.domain.User.class.getName());
             createCache(cm, com.techxel.play2win_admin.domain.Authority.class.getName());
             createCache(cm, com.techxel.play2win_admin.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.techxel.play2win_admin.domain.Authentification.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.Choix.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.InfosAbonne.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.Incription.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.MotDePasseSetting.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.Play.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.Principes.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.Profil.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.Reponse.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.Restaure.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.Resultat.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.SaisieCode.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.Abonne.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.Abonne.class.getName() + ".gains");
+            createCache(cm, com.techxel.play2win_admin.domain.Gains.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.Gains.class.getName() + ".abonnes");
+            createCache(cm, com.techxel.play2win_admin.domain.Question.class.getName());
+            createCache(cm, com.techxel.play2win_admin.domain.Recette.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

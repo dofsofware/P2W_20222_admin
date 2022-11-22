@@ -1,0 +1,15 @@
+{
+  "applications": "*",
+  "changelogDate": "20221119235547",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "incription",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Incription",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

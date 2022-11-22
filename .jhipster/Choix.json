@@ -1,0 +1,15 @@
+{
+  "applications": "*",
+  "changelogDate": "20221119235545",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "choix",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Choix",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

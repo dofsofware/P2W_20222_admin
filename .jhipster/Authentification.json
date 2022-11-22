@@ -1,0 +1,15 @@
+{
+  "applications": "*",
+  "changelogDate": "20221119235544",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "authentification",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Authentification",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

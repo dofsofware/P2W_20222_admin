@@ -1,0 +1,11 @@
+{
+  "play2WinAdminApp": {
+    "Niveau": {
+      "null": "",
+      "DEBUTANT": "DEBUTANT",
+      "INTERMEDIAIRE": "INTERMEDIAIRE",
+      "EXPERT": "EXPERT",
+      "MAESTRO": "MAESTRO"
+    }
+  }
+}

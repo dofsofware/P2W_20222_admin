@@ -1,0 +1,23 @@
+{
+  "play2WinAdminApp": {
+    "principes": {
+      "home": {
+        "title": "Principes",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Principes",
+        "createOrEditLabel": "Créer ou éditer un Principes",
+        "notFound": "Aucun Principes trouvé"
+      },
+      "created": "Un nouveau Principes a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Principes avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Principes avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Principes {{ id }} ?"
+      },
+      "detail": {
+        "title": "Principes"
+      },
+      "id": "ID"
+    }
+  }
+}

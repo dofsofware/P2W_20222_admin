@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Abonne.
+    -->
+    <changeSet id="20221119235556-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="abonne_id"
+                                 baseTableName="rel_abonne__gains"
+                                 constraintName="fk_rel_abonne__gains__abonne_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="abonne"/>
+
+        <addForeignKeyConstraint baseColumnNames="gains_id"
+                                 baseTableName="rel_abonne__gains"
+                                 constraintName="fk_rel_abonne__gains__gains_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="gains"/>
+    </changeSet>
+</databaseChangeLog>

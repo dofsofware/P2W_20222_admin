@@ -1,0 +1,23 @@
+{
+  "play2WinAdminApp": {
+    "play": {
+      "home": {
+        "title": "Plays",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Play",
+        "createOrEditLabel": "Créer ou éditer un Play",
+        "notFound": "Aucun Play trouvé"
+      },
+      "created": "Un nouveau Play a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Play avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Play avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Play {{ id }} ?"
+      },
+      "detail": {
+        "title": "Play"
+      },
+      "id": "ID"
+    }
+  }
+}

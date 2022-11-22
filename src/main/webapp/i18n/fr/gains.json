@@ -1,0 +1,28 @@
+{
+  "play2WinAdminApp": {
+    "gains": {
+      "home": {
+        "title": "Gains",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Gains",
+        "createOrEditLabel": "Créer ou éditer un Gains",
+        "notFound": "Aucun Gains trouvé"
+      },
+      "created": "Un nouveau Gains a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Gains avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Gains avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Gains {{ id }} ?"
+      },
+      "detail": {
+        "title": "Gains"
+      },
+      "id": "ID",
+      "telephone": "Telephone",
+      "minute": "Minute",
+      "megabit": "Megabit",
+      "createdAt": "Created At",
+      "abonne": "Abonne"
+    }
+  }
+}

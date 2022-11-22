@@ -1,0 +1,15 @@
+{
+  "applications": "*",
+  "changelogDate": "20221119235554",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "resultat",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Resultat",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

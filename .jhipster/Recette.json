@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20221119235559",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "recette",
+  "fields": [
+    {
+      "fieldName": "telephone",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "12",
+      "fieldValidateRulesMinlength": "12"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "montant",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "choixDuGain",
+      "fieldType": "ChoixDuGain",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "MINUTES,INTERNET"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Recette",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

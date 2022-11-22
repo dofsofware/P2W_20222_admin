@@ -1,0 +1,15 @@
+{
+  "applications": "*",
+  "changelogDate": "20221119235550",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "principes",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Principes",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

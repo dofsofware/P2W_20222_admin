@@ -1,0 +1,15 @@
+{
+  "applications": "*",
+  "changelogDate": "20221119235546",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "infos_abonne",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "InfosAbonne",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}
